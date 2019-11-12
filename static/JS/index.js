@@ -122,7 +122,7 @@ function JSONdata() {
             return false
         }
         if(Age < 21){
-            alert('Age cannot be less than 21');
+            alert('Age `cannot be less than 21');
             return false
         }
     }
