@@ -5,6 +5,7 @@ import pandas as py
 import joblib as jobs
 from matplotlib  import pyplot
 import io
+import os
 import base64
 app = Flask(__name__)
 app.secret_key = 'loginner'
@@ -137,4 +138,6 @@ def Predict(x):
     return predict
 
 if __name__ == '__main__':
-    app.run(debug=False ,port=8000)
+    # Bind to PORT if defined, otherwise default to 5000.
+    port = int(os.environ.get('PORT', 8000))
+    app.run(host='0.0.0.0', port=port)
