@@ -1,0 +1,85 @@
+{% extends 'Parent.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="wrap">
+
+                <form class="login form-group bgtranspent" action="/Predictor" method="post">
+                    <p class="form-title">
+                        <h3 style="    text-align: center;">Predict Road Accident</h3>
+                    </p>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="formisthe">City</div>
+                                <div class="formisthe">Weather </div>
+                                <div class="formisthe">Road Types </div>
+                                <div class="formisthe">Sex of Driver </div>
+                                <div class="formisthe">Vehicle Type </div>
+                                <div class="formisthe">Age of Driver </div>
+                                <div class="formisthe">Speed Limit </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div>
+                                 <select class="form-control" name="city">
+                                    {% for city  in cities %}
+                                    <option value="{{city}}">{{city}}</option>
+                                    {% endfor %}
+                                 </select>
+                                </div>
+                                <div> <select class="form-control" name="Weather">
+                                    {% for Weathe  in Weather %}
+                                    <option value="{{Weathe}}">{{Weathe}}</option>
+                                    {% endfor %}
+                                    </select>
+                                </div>
+                                <div>
+                                <select class="form-control" name="RoadType">
+                                    {% for Road_Type  in Road_Types %}
+                                    <option value="{{Road_Type}}">{{Road_Type}}</option>
+                                    {% endfor %}
+                                    </select>
+                                </div>
+                                <div> <select class="form-control" name="Sex">
+                                    {% for Se  in Sex %}
+                                    <option value="{{Se}}">{{Se}}</option>
+                                    {% endfor %}
+                                    </select>
+                                </div>
+                                <div>
+                                     <select class="form-control" name="VehicleType">
+                                        {% for Vehicle  in Vehicles %}
+                                        <option value="{{Vehicle}}">{{Vehicle}}</option>
+                                        {% endfor %}
+                                     </select>
+                                </div>
+                                <div> <input type="number"  name="Age" id="Age" min="21" max="75"> </div>
+                                <div><input type="number" name="Speedlimit" id="Speedlimit" step="5" min="20" max="120" > </div>
+                            </div>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                <input class="submit btn btn-primary" onclick="return checkform()" type="submit">
+                            </span>
+                        </div>
+                </form>
+
+            </div>
+        </div>
+         <div class="col-md-5">
+                <div class=" login bgtranspent1" >
+
+                    {% if PredictionGraph %}
+                    <div class="center1" >
+                        <h3 style="width: 100%;margin: 0 auto;background: #fff;">Prediction</h3>
+                         <img src="data:image/png;base64, {{ PredictionGraph }}" width="486" height="400" alt="graph">
+                    </div>
+
+                    {% endif%}
+                </div>
+                    </div>
+    </div>
+</div>
+{% endblock %}

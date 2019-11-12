@@ -1,0 +1,21 @@
+{% extends 'Parent.html' %}
+{% block body %}
+<h3 class="text-center">Statistics</h3>
+<div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="text-center" style="margin-bottom: 10px;"><h4>Accidents Stat Based on City</h4></div>
+            <div id="Visulization" style="width: 98%; height: 300px;padding-left :10px; position: relative; "></div>
+            <div class="text-center" style="margin-top: 10px;"><h4>Accidents Stat Based on Vehicle Type</h4></div>
+            <div id="Visulization1" style="width: 98%; height: 300px; padding-left :10px; position: relative; "></div>
+        </div>
+         <div class="col-md-6">
+            <div class="text-center" style="margin-bottom: 10px;"><h4>Accidents Stat Based on Accident Issues</h4></div>
+            <div id="Visulization3" style="width: 98%; height: 300px;padding-left :10px; position: relative;"></div>
+            <div class="text-center" style="margin-top: 10px;"><h4>Accidents Stat Based on Gender</h4></div>
+            <div id="Visulization2" style="width: 98%; height: 300px;padding-left :10px; position: relative; "></div>
+        </div>
+    </div>
+</div>
+<script>Loadfoamtree()</script>
+{% endblock %}

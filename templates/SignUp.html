@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <script type="text/javascript" src="{{ url_for('static',filename='JS/index.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='JS/Chart.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <script type="text/javascript" src="{{ url_for('static',filename='JS/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <link href="{{ url_for('static',filename='css/style.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',filename='css/default.css') }}" rel="stylesheet">
+</head>
+<body style="background: url({{url_for('static',filename='Images/download.jpg')}}) fixed;background-size: cover;">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 loginmargin">
+            <div class="wrap">
+
+                <form class="login form-group bgtranspent" action="/SignUp" method="post">
+                    <p class="form-title">
+                        <h3 style="text-align: center;">Login</h3>
+                    </p>
+                    <div>
+                        <span>Username</span>
+                            <span>
+                                <input type="text"  name="Username" id="Username" >
+                            </span>
+                    </div>
+                    <div>
+                        <span>Password</span>
+                        <span>
+                                <input type="password" name="password" id="password" >
+                        </span>
+                    </div>
+                    <div>
+                        <span>Confirm Password</span>
+                        <span>
+                                <input type="password" name="conpassword" id="conpassword" >
+                        </span>
+                    </div>
+                    <div>
+                            <input class="bg-btn btn-primary" onclick="return checkpwd();" type="submit" value="SignUp">
+                    </div>
+                    <div class="btn btn-link">
+                        <span><a href="/">Existing User?</a></span>
+                    </div>
+                    <div class="text-danger text-center">{{error}}</div>
+                </form>
+
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+</body>
