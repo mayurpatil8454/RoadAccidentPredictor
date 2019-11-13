@@ -64,9 +64,10 @@ def SignOut():
     return render_template('login.html')
 
 @app.route('/DownloadFile', methods =['GET'])
-def Download():
-    path = "/Login.csv"
-    return send_file(path, as_attachment=True)
+def DownloadFile():
+    path = '\Login.csv';
+    return send_file(os.path.dirname(os.path.abspath(__file__))+path, as_attachment=True)
+
 
 @app.route('/Index', methods =['GET','POST'])
 def home():
