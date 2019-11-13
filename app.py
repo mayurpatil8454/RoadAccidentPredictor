@@ -1,4 +1,4 @@
-from flask import Flask, render_template ,url_for,request,redirect,session
+from flask import Flask, render_template ,url_for,request,redirect,session,send_file
 import matplotlib as mat
 import urllib.parse
 import pandas as py
@@ -63,6 +63,10 @@ def SignOut():
         session['LoginFlag'] = False
     return render_template('login.html')
 
+@app.route('/DownloadFile', methods =['GET'])
+def Download():
+    path = "/Login.csv"
+    return send_file(path, as_attachment=True)
 
 @app.route('/Index', methods =['GET','POST'])
 def home():
