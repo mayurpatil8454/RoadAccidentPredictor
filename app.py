@@ -65,7 +65,7 @@ def SignOut():
 
 @app.route('/DownloadFile', methods =['GET'])
 def DownloadFile():
-    path = '\Login.csv';
+    path = '/Login.csv';
     return send_file(os.path.dirname(os.path.abspath(__file__))+path, as_attachment=True)
 
 
