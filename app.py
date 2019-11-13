@@ -7,6 +7,8 @@ from matplotlib  import pyplot
 import io
 import os
 import base64
+import csv
+
 app = Flask(__name__)
 app.secret_key = 'loginner'
 
@@ -48,8 +50,10 @@ def SignUp():
         for row in LoginData.index:
             if LoginData['Username'][row] == Username:
                 return render_template('SignUp.html',error="UserId already exist please try again with different UserId")
-        LoginData1 = LoginData.append({'Username' :  Username, 'Password' : password} , ignore_index=True)
-        LoginData1.to_csv("Login.csv", index=False)
+        fields = [Username,password]
+        with open(r'Login.csv', 'a') as f:
+            writer = csv.writer(f)
+            writer.writerow(fields)
         return render_template('login.html')
     return render_template('SignUp.html')
 

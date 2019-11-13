@@ -1,11 +1,11 @@
-import pandas as py
-import matplotlib as mat
-import  seaborn as sns
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
+# import pandas as py
+# import matplotlib as mat
+# import  seaborn as sns
+# from sklearn.model_selection import train_test_split
+# from sklearn.linear_model import LogisticRegression
 # from sklearn.metrics import accuracy_score
 # import joblib as jobs
-AccidentData = py.read_csv(r"C:\Users\MAYUR\PycharmProjects\Pythontutorials\Newdataset.csv")
+# AccidentData = py.read_csv(r"C:\Users\MAYUR\PycharmProjects\Pythontutorials\Newdataset.csv")
 # y = AccidentData['City']
 # X = AccidentData.drop('City', axis=1)
 #
@@ -38,8 +38,13 @@ AccidentData = py.read_csv(r"C:\Users\MAYUR\PycharmProjects\Pythontutorials\Newd
 #
 # sns.countplot(x='Speed_limit',data=AccidentData)
 # mat.pyplot.show()
-sns.countplot(x='VehicleType' , data=AccidentData )
-mat.pyplot.show()
+import csv
+fields=['first','second','third']
+with open(r'Login.csv', 'a') as f:
+    writer = csv.writer(f)
+    writer.writerow(fields)
+# sns.countplot(x='VehicleType' , data=AccidentData )
+# mat.pyplot.show()
 # sns.countplot(x='City' , data=AccidentData , hue='Sex')
 # mat.pyplot.show()
 # Accident_issues = [166 , 126 , 116 , 92]
