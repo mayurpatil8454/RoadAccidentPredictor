@@ -195,8 +195,8 @@ blockquote strong {
 .navbar-custom ul.nav li a {
 	font-size: 12px;
 	letter-spacing: 1px;
-    color: #444;
-    background:#e8e8e8;
+    color: white;
+    background:black;
 	text-transform: uppercase;
 	font-weight: 700;
 }
@@ -1799,7 +1799,7 @@ a.btn:focus{
         padding: 15px 0;
         border-bottom: 0;
         letter-spacing: 1px;
-        background:#e8e8e8;
+        background:black;
         -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
         -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
         transition: background .5s ease-in-out,padding .5s ease-in-out;

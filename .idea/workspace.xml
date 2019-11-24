@@ -4,8 +4,9 @@
     <list default="true" id="08629fab-bbe0-44ff-b13a-3087e4303d5e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Index.py" beforeDir="false" afterPath="$PROJECT_DIR$/Index.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Login.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Parent.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Parent.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +43,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Index">
+  <component name="RunManager" selected="Python.app">
     <configuration name="Index" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="RoadAccidentPredictor" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -87,8 +88,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Index" />
         <item itemvalue="Python.app" />
+        <item itemvalue="Python.Index" />
       </list>
     </recent_temporary>
   </component>
