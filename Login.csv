@@ -1,6 +1,7 @@
-Username,Password
-mayur,mayur
-mayur123,mayur
-sana,sana
-sani,sani124
+Username,Password,Usertype
+mayur,mayur,1
+mayur123,mayur,2
+sana,sana,2
+sani,sani124,2
+mayur321,mayur,2
 

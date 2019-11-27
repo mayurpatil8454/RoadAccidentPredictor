@@ -6,14 +6,21 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 import joblib as jobs
 AccidentData = py.read_csv(r"C:\Users\MAYUR\PycharmProjects\Pythontutorials\Newdataset.csv")
+
+
 y = AccidentData['City']
 X = AccidentData.drop('City', axis=1)
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
 model=LogisticRegression();
 model.fit(X_train , y_train)
+
+
 pred = model.predict(X_test)
 print(accuracy_score(y_test,pred))
 #
+
+
 jobs.dump(model, 'RoadAccidentPredictor.pkl', compress=9)
 model_clone = jobs.load('RoadAccidentPredictor.pkl')
 print(type(X_test))

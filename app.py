@@ -34,7 +34,9 @@ def Login():
         for row in LoginData.index:
             if LoginData['Username'][row] == Username and LoginData['Password'][row] == password:
                 session['LoginFlag'] = True;
-                return render_template('index.html')
+                session['UserType'] = int(LoginData['Usertype'][row])
+                print(session['UserType'])
+                return render_template('index.html',Usertype = session['UserType'])
         return render_template('login.html',error="Invalid UserID and Password")
 
     return render_template('login.html')
@@ -49,7 +51,7 @@ def SignUp():
         for row in LoginData.index:
             if LoginData['Username'][row] == Username:
                 return render_template('SignUp.html',error="UserId already exist please try again with different UserId")
-        fields = [Username,password]
+        fields = [Username,password,2]
         with open(r'Login.csv', 'a') as f:
             writer = csv.writer(f)
             writer.writerow(fields)
@@ -75,7 +77,7 @@ def DownloadFile():
 @app.route('/Index', methods =['GET','POST'])
 def home():
     if session['LoginFlag'] == True:
-        return render_template('index.html')
+        return render_template('index.html',Usertype = session['UserType'])
     else:
         return render_template('login.html')
 
@@ -130,19 +132,23 @@ def Predict(x):
            "Age": [Age]
            }
     datapoint = py.DataFrame(obj)
-    predict =model_clone.predict(datapoint)
+    predict = model_clone.predict(datapoint)
     print(predict)
+    predict = predictscore(predict)
+    return predict
+
+def predictscore(predict):
     predict = predict * 10
     if predict <= 50:
         predict = 25
     elif predict <= 70:
-        predict =45
+        predict = 45
     elif predict <= 120:
         predict = 60
     elif predict <= 160:
-        predict =65
-    else:predict =70
-    print(predict);
+        predict = 65
+    else:
+        predict = 70
     return predict
 
 if __name__ == '__main__':

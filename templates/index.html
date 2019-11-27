@@ -13,7 +13,6 @@
           </div>
         </div>
       </div>
-
     </div>
 
     <div class="text-center">
@@ -22,19 +21,24 @@
         <div class="row">
           <div class="col-xs-6 col-sm-3 col-md-3">
             <div class="wow fadeInLeft" data-wow-delay="0.2s">
-              <!-- <div class="service-box">
-                <div class="service-icon">
-                  <span class="pe-7s-monitor pe-5x"></span>
-                </div>
-                <div class="service-desc">
-                  <h5>Web Design</h5>
-                  <p>
-                    Ad denique euripidis signiferumque vim, iusto admodum quo cu. No tritani neglegentur mediocritatem
-                    duo.
-                  </p>
-                  <a href="#" class="btn btn-skin">Learn more</a>
-                </div>
-              </div> -->
+              {% block content %}
+                {% if Usertype == 1 %}
+                  <div class="service-box">
+                    <div class="service-icon">
+                    <span class="pe-7s-monitor pe-5x"></span>
+                    </div>
+                    <div class="service-desc">
+                      <h5>Create User</h5>
+                      <p>
+                        Create and monitor the users in system
+                      </p>
+                      <a href="#" class="btn btn-skin">Learn more</a>
+                    </div>
+                  </div>
+                {% endif %}
+              {% endblock content %}
+
+
             </div>
           </div>
           <div class="col-xs-6 col-sm-3 col-md-3">
@@ -71,19 +75,23 @@
           </div>
           <div class="col-xs-6 col-sm-3 col-md-3">
             <div class="wow fadeInRight" data-wow-delay="0.2s">
-             <!--  <div class="service-box">
-                <div class="service-icon">
-                  <span class="pe-7s-phone pe-5x"></span>
-                </div>
-                <div class="service-desc">
-                  <h5>Mobile apps</h5>
-                  <p>
-                    Ad denique euripidis signiferumque vim, iusto admodum quo cu. No tritani neglegentur mediocritatem
-                    duo.
-                  </p>
-                  <a href="#" class="btn btn-skin">Learn more</a>
-                </div>
-              </div> -->
+               {% block content1 %}
+                {% if Usertype == 1 %}
+                  <div class="service-box">
+                    <div class="service-icon">
+                      <span class="pe-7s-phone pe-5x"></span>
+                    </div>
+                    <div class="service-desc">
+                    <h5>Train Model</h5>
+                    <p>
+                      Train the model from the data provided by the RTA
+                    </p>
+                    <a href="#" class="btn btn-skin">Learn more</a>
+                  </div>
+                  </div>
+
+                {% endif %}
+              {% endblock content1 %}
             </div>
           </div>
         </div>
