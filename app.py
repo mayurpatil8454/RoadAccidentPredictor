@@ -139,16 +139,7 @@ def Predict(x):
 
 def predictscore(predict):
     predict = predict * 10
-    if predict <= 50:
-        predict = 25
-    elif predict <= 70:
-        predict = 45
-    elif predict <= 120:
-        predict = 60
-    elif predict <= 160:
-        predict = 65
-    else:
-        predict = 70
+
     return predict
 
 if __name__ == '__main__':
